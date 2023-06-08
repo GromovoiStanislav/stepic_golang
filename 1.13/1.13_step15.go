@@ -22,13 +22,26 @@ Sample Output:
 */
 
 func main() {
-	var n int
-	fmt.Scan(&n)
+	var num int
+	fmt.Scan(&num)
 
-	fmt.Printf("%b\n", n)
+	//fmt.Printf("%b\n", num)
 
-	// for n > 0 {
-    //     defer fmt.Print(n % 2)
-    //     n /= 2
+
+
+	// for num > 0 {
+    //     defer fmt.Print(num % 2)
+    //     num /= 2
     // }
+
+
+
+	sum := 0
+	digit := 1
+	for num != 0 {
+		sum += num % 2 * digit
+		digit *= 10
+		num /= 2
+	}
+	fmt.Println(sum)
 }
